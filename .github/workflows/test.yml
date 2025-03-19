@@ -26,32 +26,32 @@ jobs:
         run: |
           if [ ! -f "testing.py" ]; then
             echo "testing.py not found. Creating and adding it..."
-            cat <<EOT > testing.py
-from main import Sum, Sub, Mul, Div
-
-def test_Sum():
-  assert Sum(1,2) == 3
-  assert Sum(2,2) == 4
-  assert Sum(3,3) == 6
-
-def test_Sub():
-  assert Sub(1,2) == -1
-  assert Sub(2,2) == 0
-  assert Sub(3,3) == 0
-
-def test_Mul():
-  assert Mul(1,2) == 2
-  assert Mul(2,2) == 4
-  assert Mul(3,3) == 9
-
-def test_Div():
-  assert Div(1,2) == 0.5
-  assert Div(2,2) == 1
-EOT
-            git config --global user.name "github-actions[bot]"
-            git config --global user.email "github-actions[bot]@users.noreply.github.com"
-            git add testing.py
-            git commit -m "Add missing testing.py file"
+          cat <<EOT > testing.py
+              from main import Sum, Sub, Mul, Div
+              
+              def test_Sum():
+                assert Sum(1,2) == 3
+                assert Sum(2,2) == 4
+                assert Sum(3,3) == 6
+              
+              def test_Sub():
+                assert Sub(1,2) == -1
+                assert Sub(2,2) == 0
+                assert Sub(3,3) == 0
+              
+              def test_Mul():
+                assert Mul(1,2) == 2
+                assert Mul(2,2) == 4
+                assert Mul(3,3) == 9
+              
+              def test_Div():
+                assert Div(1,2) == 0.5
+                assert Div(2,2) == 1
+              EOT
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add testing.py
+          git commit -m "Add missing testing.py file"
           fi
           /opt/hostedtoolcache/Python/3.11.11/x64/bin/python -m pytest testing.py -v
 
