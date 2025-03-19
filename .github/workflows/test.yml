@@ -58,4 +58,4 @@ jobs:
           /opt/hostedtoolcache/Python/3.11.11/x64/bin/python -m pip list
 
       - name: Running test file
-        run: python -m pytest testing.py -v
+        run: /opt/hostedtoolcache/Python/3.11.11/x64/bin/python -m pytest testing.py -v
