@@ -59,4 +59,4 @@ jobs:
           pip install -r requirements.txt
 
       - name: Running test file
-        run: python -m pytest testing.py
+        run: python -m pytest testing.py -v
