@@ -56,7 +56,7 @@ jobs:
           python -m venv venv
           source venv/bin/activate
           pip install Pytest
-          pip install -r requirements.txt
+          if [ -f requirements.txt ]; then python -m pip install -r requirements.txt; fi
 
       - name: Running test file
         run: python -m pytest testing.py -v
