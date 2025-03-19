@@ -22,7 +22,6 @@ jobs:
       - name: Check and Add testing.py
         run: |
           if [ ! -f "testing.py" ]; then
-            echo "testing.py not found. Creating it..."
             cat <<EOT > testing.py
                 from main import Sum, Sub, Mul, Div
                 
