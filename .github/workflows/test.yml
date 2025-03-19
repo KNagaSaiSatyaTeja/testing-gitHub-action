@@ -39,7 +39,7 @@ jobs:
               def test_Div():
                   assert Div(1,2) == 0.5
                   assert Div(2,2) == 1
-              EOT
+          EOT
             git config --global user.name "github-actions[bot]"
             git config --global user.email "github-actions[bot]@users.noreply.github.com"
             git add testing.py
